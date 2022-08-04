@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/comeback</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<!-- Dialect means database ki bhasha if u r using MySQL-> Mysql Dialect 
+				postgree DB -> PostGree Dialect  -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		
+		<!-- Hibernate will create automatic table create values 
+			create -> table will create and delete create and delete 
+			update -> table will update data in same database  -->
+			
+		<property name="hbm2ddl.auto">create</property>
+		
+		<!-- Need to check which quries hibernate is using for any update or something
+			like this  -->
+		<property name="show_sql">false</property>	
+		
+		<mapping class="com.project.main.Project_Hibernate_Employee_Details.Employee_Class_Hibernate_Project"/>
+	</session-factory>
+</hibernate-configuration>
